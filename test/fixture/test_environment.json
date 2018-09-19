@@ -1,0 +1,5 @@
+{
+  "test_name" : "feedyard-ci-test-bucket",
+  "test_log_bucket": "feedyard-available-logging",
+  "test_enable_key_rotation" : "true"
+}

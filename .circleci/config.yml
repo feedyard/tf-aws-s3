@@ -1,0 +1,26 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/tf-aws-state-bucket
+    environment:
+      BASH_ENV: local.env
+    docker:
+    - image: quay.io/feedyard/circleci-infra-agent
+    steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: confirm Docker
+        command: docker info
+    - run:
+        name: decrypt secrets
+        command: openssl aes-256-cbc -d -in env.ci -out local.env -k $FEEDYARD_PIPELINE_KEY
+    - run:
+        name: terraform format and linting
+        command: invoke stylecheck
+    - run:
+        name: generate documentation
+        command: invoke generatedocs
+    # when kitchen-terraform / awspec compatibility issues are resolved, re-introduce the test fixture and
+    # publish to terraform module registry
