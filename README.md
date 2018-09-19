@@ -1,7 +1,7 @@
 # feedyard/tf-aws-state-bucket
 
 Create an S3 bucket for terraform state files or similar potentially secure information that requires both an encrypted  
-bucket and logging.  
+bucket and logging. KMS key is aliased with "managed-by/<module>/random_pet" for easeier lifecycle management.  
 
 ## Usage
 
@@ -18,7 +18,6 @@ module "state_bucket" {
   }
 }
 ```
-
 
 ## Inputs
 
