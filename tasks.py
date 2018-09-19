@@ -3,7 +3,7 @@ from invoke import task
 @task
 def stylecheck(ctx):
     ctx.run('terraform fmt -check=false')
-    ctx.run('docker run --rm -v $(pwd):./ --workdir=./ -t wata727/tflint --error-with-issues')
+    ctx.run('docker run --rm -v $(pwd) -t wata727/tflint --error-with-issues')
 
 @task
 def generatedocs(ctx):
