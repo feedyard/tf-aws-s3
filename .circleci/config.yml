@@ -19,8 +19,5 @@ jobs:
     - run:
         name: terraform format and linting
         command: invoke stylecheck
-    - run:
-        name: generate documentation
-        command: invoke generatedocs
     # when kitchen-terraform / awspec compatibility issues are resolved, re-introduce the test fixture and
     # publish to terraform module registry
