@@ -24,11 +24,6 @@ resource "aws_s3_bucket" "mod" {
     enabled = "${var.versioning}"
   }
 
-  logging {
-    target_bucket = "${var.log_bucket}"
-    target_prefix = "${var.log_target_prefix}/"
-  }
-
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {

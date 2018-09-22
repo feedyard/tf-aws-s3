@@ -1,4 +1,3 @@
-# backend.conf is setup at the start based on target account
 terraform {
   required_version = ">= 0.11.8"
 }
@@ -16,6 +15,5 @@ variable "aws_region" {
 variable "test_name" {}
 
 variable "test_enable_key_rotation" {}
-variable "test_log_bucket" {}
 
 data "aws_caller_identity" "current" {}

@@ -11,14 +11,6 @@ variable "versioning" {
   default = "true"
 }
 
-# where to send logging
-variable "log_bucket" {}
-
-# prefix to add to automated logs
-variable "log_target_prefix" {
-  default = "tf-state-log"
-}
-
 # delay before deleting kms key used to encrypt bucket objects when removing resource
 variable "deletion_window_in_days" {
   default = "7"
