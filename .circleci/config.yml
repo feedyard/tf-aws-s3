@@ -14,10 +14,7 @@ jobs:
         name: confirm Docker
         command: docker info
     - run:
-        name: decrypt secrets
-        command: openssl aes-256-cbc -d -in env.ci -out local.env -k $FEEDYARD_PIPELINE_KEY
-    - run:
-        name: terraform format and linting
+        name: terraform files syntax and style check
         command: invoke stylecheck
     # when kitchen-terraform / awspec compatibility issues are resolved, re-introduce the test fixture and
     # publish to terraform module registry

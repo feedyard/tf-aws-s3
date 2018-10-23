@@ -1,17 +1,17 @@
 # feedyard/tf-aws-state-bucket
 
-Create an S3 bucket for terraform state files or similar potentially secure information that requires both an encrypted  
-bucket and logging. KMS key is aliased with "managed-by/<module>/random_pet" for easeier lifecycle management.  
+Terraform module to create an S3 bucket for terraform state files or similar secure information that requires both  
+server side encryption and object versioning. KMS key is aliased with "managed-by/<module>/random_pet" for identification.  
 
 ## Usage
 
 ```
 module "state_bucket" {
-  source                   = "github/feedyard/tf-aws-state-bucket"
+  source                 = "github/feedyard/tf-aws-state-bucket"
 
   name                   = "feedyard-terraform-state"
-  log_bucket             = "feedyard-cloudtrail-logs"
   enable_key_rotation    = "True"
+  
   tags = {
     "feedyard" = "True"
     "pipeline" = "feedyard/aws-bootstrap-resources"
@@ -26,8 +26,6 @@ module "state_bucket" {
 | acl | access control list | string | `private` | no |
 | deletion_window_in_days | delay before deleting kms key used to encrypt bucket objects when removing resource | string | `7` | no |
 | enable_key_rotation | enable automatic, annual key rotation | string | `false` | no |
-| log_bucket | where to send logging | string | - | yes |
-| log_target_prefix | prefix to add to automated logs | string | `tf-state-log` | no |
 | name | name given to new bucket | string | - | yes |
 | sse_algorithm | encyption algorithm | string | `aws:kms` | no |
 | tags | A map of tags to add to all resources | string | `<map>` | no |
