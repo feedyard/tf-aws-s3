@@ -30,7 +30,7 @@ jobs:
       - setup_remote_docker
       - common-tasks/decrypt-env
       - run:
-          name: confirm Docker
+          name: confirm Docker health
           command: docker info
       - run:
           name: terraform files syntax and style check
