@@ -21,11 +21,3 @@ output "key_id" {
 output "key_arn" {
   value = "${module.state_bucket.key_arn}"
 }
-
-output "account_id" {
-  value = "${data.aws_caller_identity.current.account_id}"
-}
-
-output "caller_user" {
-  value = "${data.aws_caller_identity.current.user_id}"
-}

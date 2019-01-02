@@ -1,9 +1,9 @@
 terraform {
-  required_version = ">= 0.11.8"
+  required_version = ">= 0.11.11"
 }
 
 provider "aws" {
-  version = ">= 1.36"
+  version = ">= 1.54"
   region  = "${var.aws_region}"
 }
 
@@ -15,5 +15,3 @@ variable "aws_region" {
 variable "test_name" {}
 
 variable "test_enable_key_rotation" {}
-
-data "aws_caller_identity" "current" {}

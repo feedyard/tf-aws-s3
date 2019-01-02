@@ -1,7 +1,8 @@
 # feedyard/tf-aws-state-bucket
 
-Terraform module to create an S3 bucket for terraform state files or similar secure information that requires both  
-server side encryption and object versioning. KMS key is aliased with "managed-by/<module>/random_pet" for identification.  
+Terraform module to create an S3 bucket for terraform state files or similar secure information that requires   
+server side encryption, non-public access restriction, and object versioning. KMS key is aliased with  
+"managed-by/<module>/random_pet" for identification.  
 
 ## Usage
 

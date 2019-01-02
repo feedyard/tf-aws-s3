@@ -1,22 +1,14 @@
 ---
 driver:
   name: "terraform"
-  root_module_directory: "test/fixture"
+  root_module_directory: "fixture"
   variable_files:
-    - test/fixture/test_environment.json
+    - fixture/test_environment.json
 
 provisioner:
   name: "terraform"
 
 platforms:
-- name: "aws"
+  - name: "aws"
 
-verifier:
-  name: "awspec"
-
-suites:
-- name: "default"
-  verifier:
-    name: "awspec"
-    patterns:
-    - "test/integration/default_spec.rb"
+# kitchen-inspec for verify does not seem to support -t targeting
