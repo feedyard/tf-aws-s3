@@ -1,6 +1,5 @@
 ---
 version: 2.1
-# comment
 
 orbs:
   common-tasks: feedyard/common-pipeline-tasks@dev:latest
