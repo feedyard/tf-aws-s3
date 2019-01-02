@@ -11,4 +11,6 @@ provisioner:
 platforms:
   - name: "aws"
 
-# kitchen-inspec for verify does not seem to support -t targeting
+suites:
+  - name: default
+  # kitchen-inspec for verify does not seem to support -t targeting
