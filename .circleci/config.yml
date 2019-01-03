@@ -39,11 +39,11 @@ jobs:
           aws-secret-access-key: $FEEDYARD_SANDBOC_CI_AWS_SECRET_ACCESS_KEY
           aws-region: us-east-1
       - run:
-          name: use test-kitchen to provision test instance using module
+          name: provision instance of module to sandbox account
           working_directory: test
           command: |
-            kitchen create
-            kitchen converge
+            terraform init
+            terraform apply
       - run:
           name: use InSpec to validate aws configuration
           working_directory: test
@@ -51,5 +51,5 @@ jobs:
       - run:
           name: destroy aws resources
           working_directory: test
-          command: kitchen destroy
+          command: terraform destroy
           when: always
