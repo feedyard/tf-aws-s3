@@ -43,7 +43,7 @@ jobs:
           working_directory: test/fixture
           command: |
             terraform init
-            terraform apply
+            terraform apply -var-file=test_environment.json
       - run:
           name: use InSpec to validate aws configuration
           working_directory: test
@@ -51,5 +51,5 @@ jobs:
       - run:
           name: destroy aws resources
           working_directory: test/fixture
-          command: terraform destroy
+          command: terraform destroy -var-file=test_environment.json
           when: always
