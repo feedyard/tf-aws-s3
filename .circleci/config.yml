@@ -40,7 +40,7 @@ jobs:
           aws-region: us-east-1
       - run:
           name: provision instance of module to sandbox account
-          working_directory: test
+          working_directory: test/fixture
           command: |
             terraform init
             terraform apply
@@ -50,6 +50,6 @@ jobs:
           command: inspec exec integration/default/tf_aws_state_bucket.rb -t aws://
       - run:
           name: destroy aws resources
-          working_directory: test
+          working_directory: test/fixture
           command: terraform destroy
           when: always
