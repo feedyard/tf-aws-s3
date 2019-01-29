@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "mod" {
 }
 
 resource "aws_s3_bucket_public_access_block" "mod" {
-  bucket = "${aws_s3_bucket.mod.id}"
+  bucket = "${aws_s3_bucket.mod.*.id}"
 
   block_public_acls   = true
   block_public_policy = true

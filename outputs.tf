@@ -10,7 +10,7 @@ output "arn" {
 
 # aws_s3_bucket resource url
 output "bucket_domain_name" {
-  value = "${aws_s3_bucket.mod.bucket_domain_name}"
+  value = "${aws_s3_bucket.mod.*.bucket_domain_name}"
 }
 
 # aws_s3_bucket resource region
