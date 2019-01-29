@@ -1,7 +1,7 @@
 module "state_bucket" {
   source = "../.."
 
-  name                = "${var.test_name}"
+  name                = ["${var.test_names}"]
   enable_key_rotation = "${var.test_enable_key_rotation}"
 
   tags = {

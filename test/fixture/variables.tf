@@ -3,7 +3,7 @@ terraform {
 }
 
 provider "aws" {
-  version = ">= 1.54"
+  version = ">= 1.57"
   region  = "${var.aws_region}"
 }
 
@@ -12,6 +12,8 @@ variable "aws_region" {
 }
 
 # bucket name
-variable "test_name" {}
+variable "test_names" {
+  type = "list"
+}
 
 variable "test_enable_key_rotation" {}

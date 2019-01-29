@@ -1,4 +1,6 @@
 {
-  "test_name" : "feedyard-ci-test-bucket",
+  "test_names" : [
+    "feedyard-ci-test-bucket"
+  ],
   "test_enable_key_rotation" : "true"
 }

@@ -1,5 +1,7 @@
 # name given to new bucket
-variable "name" {}
+variable "name" {
+  type = "list"
+}
 
 # access control list
 variable "acl" {
