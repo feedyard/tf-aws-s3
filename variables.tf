@@ -3,6 +3,12 @@ variable "name" {
   type = "list"
 }
 
+# aws account in which to create the bucket
+variable "account" {}
+
+# trailing text to place on bucket
+variable "extension" {}
+
 # access control list
 variable "acl" {
   default = "private"

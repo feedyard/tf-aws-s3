@@ -1,6 +1,8 @@
 {
   "test_names" : [
-    "feedyard-ci-test-bucket"
+    "feedyard"
   ],
+  "account": "ci",
+  "extension": "-tf-state",
   "test_enable_key_rotation" : "true"
 }

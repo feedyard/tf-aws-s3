@@ -16,4 +16,6 @@ variable "test_names" {
   type = "list"
 }
 
+variable "test_account" {}
+variable "test_extension" {}
 variable "test_enable_key_rotation" {}

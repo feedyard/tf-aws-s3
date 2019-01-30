@@ -19,7 +19,7 @@ resource "aws_kms_alias" "bucket_key_alias" {
 resource "aws_s3_bucket" "mod" {
   count  = "${(length(var.name))}"
 
-  bucket = "${var.name[count.index]}"
+  bucket = "${var.name[count.index]}-${var.account}-${var.extension}"
   acl    = "${var.acl}"
 
   versioning {
