@@ -1,9 +1,9 @@
 # Encrypted s3 buckets for storing terraform state files (or similar)
 #
-resource "random_pet" "unique" {
-  length    = 2
-  separator = "-"
-}
+//resource "random_pet" "unique" {
+//  length    = 2
+//  separator = "-"
+//}
 
 resource "aws_kms_key" "bucket_key" {
   description             = "key managed by terraform moduile tf-aws-state-bucket"
@@ -12,7 +12,7 @@ resource "aws_kms_key" "bucket_key" {
 }
 
 resource "aws_kms_alias" "bucket_key_alias" {
-  name          = "alias/managed-by/tf-aws-state-bucket/${random_pet.unique.id}"
+  name          = "alias/managed-by/tf-aws-state-bucket"
   target_key_id = "${aws_kms_key.bucket_key.id}"
 }
 
