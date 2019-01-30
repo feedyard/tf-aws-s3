@@ -38,9 +38,10 @@ resource "aws_s3_bucket" "mod" {
   tags = "${var.tags}"
 }
 
-resource "aws_s3_bucket_public_access_block" "mod" {
-  bucket = "${aws_s3_bucket.mod.*.id}"
-
-  block_public_acls   = true
-  block_public_policy = true
-}
+# not clear how this adds value in addtional to OU level policy
+//resource "aws_s3_bucket_public_access_block" "mod" {
+//  bucket = "${aws_s3_bucket.mod.*.id}"
+//
+//  block_public_acls   = true
+//  block_public_policy = true
+//}
