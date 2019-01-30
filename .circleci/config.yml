@@ -48,6 +48,12 @@ jobs:
             terraform init
             terraform apply -var-file=test_environment.json -auto-approve
       - run:
+          name: provision instance of module to sandbox account
+          working_directory: test/fixture
+          command: |
+            terraform init
+            terraform apply -var-file=test_environment.json -auto-approve
+      - run:
           name: use InSpec to validate aws configuration
           working_directory: test
           command: inspec exec integration/default/tf_aws_state_bucket.rb -t aws://
