@@ -3,6 +3,6 @@
     "feedyard"
   ],
   "test_account": "ci",
-  "test_extension": "-tf-state",
+  "test_extension": "tf-state",
   "test_enable_key_rotation" : "true"
 }

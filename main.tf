@@ -35,7 +35,7 @@ resource "aws_s3_bucket" "mod" {
     }
   }
 
-  tags = "${var.tags}"
+  tags       = "${merge(var.tags, map("Team", format("%s", ${element(var.name, count.index)})))}"
 }
 
 # not clear how this adds value in addtional to OU level policy
